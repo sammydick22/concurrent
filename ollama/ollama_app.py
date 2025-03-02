@@ -65,7 +65,8 @@ async def generate_response_dual(prompt):
         {"role": "system", "content": (
             "You are an expert AI assistant that explains your reasoning step by step. "
             "For each step, output valid JSON with keys 'title', 'content', and 'next_action' "
-            "(either 'continue' or 'final_answer'). Do not include any extra text."
+            "(either 'continue' or 'final_answer'). Do not include any extra text. Only include 'final_answer' if you are 100 percent sure that the final answer is correct."
+            "If the answer still needs verification, output 'continue'. If you are sure that the answer is correct, output 'final_answer'. "
         )},
         {"role": "user", "content": prompt},
         {"role": "assistant", "content": "Thank you! I will now think step by step."}
